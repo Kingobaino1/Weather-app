@@ -44,10 +44,10 @@ async function data(city) {
     tempMax = value.main.temp_max - 273.15;
     section.appendChild(report(value));
   } catch (error) {
-      if (error) {
-        alert('City not found!');
-        window.location.reload();
-      }
+    if (error) {
+      alert('City not found!');
+      window.location.reload();
+    }
   }
 }
 
