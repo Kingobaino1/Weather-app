@@ -28,11 +28,11 @@ $  git clone git@github.com:Kingobaino1/Restaurant_page.git
 ```
 
 ```
-$  Run in terminal 'npm install' to install dependecies
+$  Run in terminal `npm install` to install dependecies
 ```
 
 ```
-$  To see it locally run 'npm run build'.
+$  To see it locally run `npm run build`.
 ```
 
 Then open index.html in the dist folder to view it on the web.
@@ -43,7 +43,7 @@ Then open index.html in the dist folder to view it on the web.
 
 - GitHub: [@githubhandle](https://github.com/Kingobaino1)
 - Twitter: [@twitterhandle](https://twitter.com/ibehkingso)
-- Linkedin: [@linkedinhandle] (https://www.linkedin.com/in/kingsley-ibeh)
+- Linkedin: [@linkedinhandle](https://www.linkedin.com/in/kingsley-ibeh/)
 
 ## 🤝 Contributing
 
