@@ -1,46 +1,60 @@
 import './style.css';
 import head from './JS/header';
-// import data from './JS/fetchData';
-import weatherIcon from './JS/weatherIcon';
 import deg from './JS/tempConversion';
 import report from './JS/displayReport';
 
 
-// const { iconDiv } = weatherIcon('Rain')
+let tempVal;
+let tempMin;
+let tempMax;
 
 const {
   containerDiv,
-  switchBtn,
   text,
+  switchBtn
 } = head();
 
 
 const content = document.querySelector('.content');
 const section = document.querySelector('.details');
 content.appendChild(containerDiv);
-// section.appendChild(weatherIcon('Clouds'));
+
+function scroll(){
+  const cel = document.querySelector('#cel');
+  const celMin = document.querySelector('#celMin');
+  const celMax = document.querySelector('#celMax');
+  if(switchBtn.checked){
+    cel.textContent = deg(tempVal);
+    celMin.textContent = deg(tempMin);
+    celMax.textContent = deg(tempMax);
+  }else if(!switchBtn.checked){
+    cel.textContent = `${tempVal}°C`;
+    celMin.textContent = `${tempMin}°C`;
+    celMax.textContent = `${tempMax}°C`;
+  }
+}
 
 async function data(city){
   const url = fetch(`http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=700bca0642ce1cbc0f9e5ca93c0ea7ef`, { mode: 'cors' })
   const responds = await url;
   const result = responds.json();
   const value = await result;
-  // report(value);
+  tempVal = value.main.temp;
+  tempMin = value.main.temp_min;
+  tempMax = value.main.temp_max;
   section.appendChild(report(value));
 }
 
-data('awka');
 
-function scroll(){
-  deg(-12, !switchBtn.checked);
-}
-
-function enter (e){
+const enter = (e) => {
   if(e.which === 13){
-    const letter = text.value
-    console.log(letter.toLowerCase())
+    section.innerHTML = '';
+    const letter = text.value.toLowerCase()
+    data(letter)
+    text.value = '';
+    switchBtn.checked = false;
   }
 }
-switchBtn.addEventListener('click', scroll);
 text.addEventListener('keypress', enter)
-scroll()
+switchBtn.addEventListener('click', scroll)
+data('awka');

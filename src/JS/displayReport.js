@@ -1,6 +1,11 @@
 import weatherIcon from './weatherIcon';
+import scroll from './scrollBtn';
+import deg from './tempConversion';
+
+
 
 const report = (obj) => {
+  
   const container = document.createElement('div');
   container.className = '';
 
@@ -12,7 +17,8 @@ const report = (obj) => {
 
   const deg = document.createElement('h4');
   deg.className = 'text-white mt-3';
-  deg.textContent = obj.main.temp;
+  deg.setAttribute('id', 'cel');
+  deg.textContent = `${obj.main.temp}°C`;
 
   const description = document.createElement('h6');
   description.className = 'text-white';
@@ -25,7 +31,7 @@ const report = (obj) => {
   city.className = 'w-50 mx-auto';
 
   const cityName = document.createElement('h1');
-  cityName.className = 'text-white';
+  cityName.className = 'text-white align';
   cityName.textContent = `${obj.name}, ${obj.sys.country}.`;
 
   city.append(cityName);
@@ -38,7 +44,8 @@ const report = (obj) => {
 
   const minValue = document.createElement('div');
   minValue.className = 'text-dark bg-secondary w-25 mx-auto value';
-  minValue.textContent = obj.main.temp_min;
+  minValue.setAttribute('id', 'celMin');
+  minValue.textContent = `${obj.main.temp_min}°C`;
 
   const minText = document.createElement('div');
   minText.className = 'text-white text mt-2 mx-auto';
@@ -49,7 +56,8 @@ const report = (obj) => {
 
   const maxValue = document.createElement('div');
   maxValue.className = 'text-dark bg-secondary w-25 mx-auto value';
-  maxValue.textContent = obj.main.temp_max;
+  maxValue.setAttribute('id', 'celMax');
+  maxValue.textContent = `${obj.main.temp_max}°C`;
 
   const maxText = document.createElement('div');
   maxText.className = 'text-white mt-2 text mx-auto';
@@ -86,7 +94,7 @@ const report = (obj) => {
   date.className = 'w-50 mx-auto mt-4';
 
   const d = new Date();
-  const day = d.getDate()
+  const day = d.getDate();
   const year = d.getFullYear();
   const months = [
     'January',
@@ -119,11 +127,10 @@ const report = (obj) => {
   dateValue.className = 'text-white align';
   dateValue.textContent = formatted;
 
-  date.append(dateValue)
+  date.append(dateValue);
 
   details.append(min, max, pressure, humidity);
-  container.append(logo, city, details, date)
-
+  container.append(logo, city, details, date);
   return container;
 };
 
