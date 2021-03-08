@@ -42,7 +42,6 @@ async function data(city){
   tempMin = value.main.temp_min - 273.15;
   tempMax = value.main.temp_max - 273.15;
   section.appendChild(report(value));
-
 }
 
 const enter = (e) => {

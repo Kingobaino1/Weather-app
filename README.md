@@ -1,4 +1,5 @@
 # Weather-app
+
 > This app gives weather report of the chosen city.
 
 ![screenshot]()
@@ -12,7 +13,7 @@
 
 ## Live Demo
 
-[Live Demo](https://objective-clarke-d21736.netlify.app/)
+[Live Demo]()
 
 ## Getting Started
 
@@ -25,12 +26,15 @@ Clone this repository in your computer
 ```
 $  git clone git@github.com:Kingobaino1/Restaurant_page.git
 ```
+
 ```
 $  Run in terminal 'npm install' to install dependecies
 ```
+
 ```
 $  To see it locally run 'npm run build'.
 ```
+
 Then open index.html in the dist folder to view it on the web.
 
 ## Author
