@@ -1,13 +1,8 @@
 import weatherIcon from './weatherIcon';
-import scroll from './scrollBtn';
-import deg from './tempConversion';
-
-
 
 const report = (obj) => {
   
   const container = document.createElement('div');
-  container.className = '';
 
   const logo = document.createElement('div');
   logo.className = 'w-50 d-flex mx-auto';
@@ -18,7 +13,7 @@ const report = (obj) => {
   const deg = document.createElement('h4');
   deg.className = 'text-white mt-3';
   deg.setAttribute('id', 'cel');
-  deg.textContent = `${obj.main.temp}°C`;
+  deg.textContent = `${Math.round((obj.main.temp - 273.15) *100) / 100 }°C`;
 
   const description = document.createElement('h6');
   description.className = 'text-white';
@@ -45,7 +40,7 @@ const report = (obj) => {
   const minValue = document.createElement('div');
   minValue.className = 'text-dark bg-secondary w-25 mx-auto value';
   minValue.setAttribute('id', 'celMin');
-  minValue.textContent = `${obj.main.temp_min}°C`;
+  minValue.textContent = `${Math.round((obj.main.temp_min - 273.15) * 100) / 100 }°C`;
 
   const minText = document.createElement('div');
   minText.className = 'text-white text mt-2 mx-auto';
@@ -57,7 +52,7 @@ const report = (obj) => {
   const maxValue = document.createElement('div');
   maxValue.className = 'text-dark bg-secondary w-25 mx-auto value';
   maxValue.setAttribute('id', 'celMax');
-  maxValue.textContent = `${obj.main.temp_max}°C`;
+  maxValue.textContent = `${Math.round((obj.main.temp_max - 273.15) * 100) / 100 }°C`;
 
   const maxText = document.createElement('div');
   maxText.className = 'text-white mt-2 text mx-auto';
@@ -79,7 +74,7 @@ const report = (obj) => {
 
   const humidityValue = document.createElement('div');
   humidityValue.className = 'text-dark bg-secondary w-25 mx-auto value';
-  humidityValue.textContent = obj.main.humidity;
+  humidityValue.textContent = `${obj.main.humidity}%`;
 
   const humidityText = document.createElement('div');
   humidityText.className = 'text-white text m-2 mx-auto';
