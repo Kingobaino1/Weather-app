@@ -11,9 +11,8 @@ const head = () => {
 
   const text = document.createElement('input');
   text.setAttribute('type', 'search');
-  // text.placeholder = 'Enter city name';
   text.setAttribute('placeholder', 'City name')
-  text.className = 'text-white text pl-5';
+  text.className = 'text-white text_head align pl-5';
   const span = document.createElement('span')
   const searchIcon = document.createElement('i');
   searchIcon.className = 'fas fa-search text-white mt-4'
