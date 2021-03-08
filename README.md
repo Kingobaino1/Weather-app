@@ -2,7 +2,7 @@
 
 > This app gives weather report of the chosen city.
 
-![screenshot]()
+![screenshot](./src/images/weather.png)
 
 ## Built With
 
@@ -13,7 +13,7 @@
 
 ## Live Demo
 
-[Live Demo]()
+[Live Demo](https://weather-reports.netlify.app/)
 
 ## Getting Started
 
