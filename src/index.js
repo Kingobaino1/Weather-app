@@ -34,21 +34,14 @@ const scroll = () => {
 };
 
 async function data(city){
-  try {
-    const url = fetch(`http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=700bca0642ce1cbc0f9e5ca93c0ea7ef`, { mode: 'cors' })
-    const responds = await url;
-    const result = responds.json();
-    const value = await result;
-    tempVal = value.main.temp - 273.15;
-    tempMin = value.main.temp_min - 273.15;
-    tempMax = value.main.temp_max - 273.15;
-    section.appendChild(report(value));
-  } catch (error) {
-      if(error) {
-       alert('City not found!');
-       window.location.reload();
-      }
-  }
+  const url = fetch(`http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=700bca0642ce1cbc0f9e5ca93c0ea7ef`, { mode: 'cors' })
+  const responds = await url;
+  const result = responds.json();
+  const value = await result;
+  tempVal = value.main.temp - 273.15;
+  tempMin = value.main.temp_min - 273.15;
+  tempMax = value.main.temp_max - 273.15;
+  section.appendChild(report(value));
 
 }
 
