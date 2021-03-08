@@ -1,7 +1,7 @@
 # Weather-app
 > This app gives weather report of the chosen city.
 
-![screenshot](./src/images/restaurant.png)
+![screenshot]()
 
 ## Built With
 
@@ -12,7 +12,7 @@
 
 ## Live Demo
 
-[Live Demo](https://boring-brattain-6d5190.netlify.app/)
+[Live Demo]()
 
 ## Getting Started
 
