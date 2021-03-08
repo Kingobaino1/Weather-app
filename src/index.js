@@ -22,30 +22,37 @@ const scroll = () => {
   const celMin = document.querySelector('#celMin');
   const celMax = document.querySelector('#celMax');
 
-  if(switchBtn.checked) {
+  if (switchBtn.checked) {
     cel.textContent = deg(tempVal);
     celMin.textContent = deg(tempMin);
     celMax.textContent = deg(tempMax);
-  } else if(!switchBtn.checked) {
+  } else if (!switchBtn.checked) {
     cel.textContent = `${Math.round(tempVal * 100) / 100}°C`;
-    celMin.textContent = `${Math.round(tempMin * 100 ) / 100}°C`;
+    celMin.textContent = `${Math.round(tempMin * 100) / 100}°C`;
     celMax.textContent = `${Math.round(tempMax * 100) / 100}°C`;
-  };
+  }
 };
 
-async function data(city){
-  const url = fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=700bca0642ce1cbc0f9e5ca93c0ea7ef`, { mode: 'cors' })
-  const responds = await url;
-  const result = responds.json();
-  const value = await result;
-  tempVal = value.main.temp - 273.15;
-  tempMin = value.main.temp_min - 273.15;
-  tempMax = value.main.temp_max - 273.15;
-  section.appendChild(report(value));
+async function data(city) {
+  try {
+    const url = fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=700bca0642ce1cbc0f9e5ca93c0ea7ef`, { mode: 'cors' });
+    const responds = await url;
+    const result = responds.json();
+    const value = await result;
+    tempVal = value.main.temp - 273.15;
+    tempMin = value.main.temp_min - 273.15;
+    tempMax = value.main.temp_max - 273.15;
+    section.appendChild(report(value));
+  } catch (error) {
+      if (error) {
+        alert('City not found!');
+        window.location.reload();
+      }
+  }
 }
 
 const enter = (e) => {
-  if(e.which === 13){
+  if (e.which === 13) {
     section.innerHTML = '';
     const letter = text.value.toLowerCase();
     data(letter);

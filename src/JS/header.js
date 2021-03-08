@@ -15,7 +15,7 @@ const head = () => {
   text.className = 'text_head align';
   const span = document.createElement('span');
   const searchIcon = document.createElement('i');
-  searchIcon.className = 'fas fa-search text-dark m-4'
+  searchIcon.className = 'fas fa-search text-dark m-4';
 
   const toggle = document.createElement('div');
   toggle.className = 'd-flex m-2';
@@ -29,7 +29,7 @@ const head = () => {
   const div = document.createElement('div');
   div.className = 'slider round';
 
-  span.appendChild(searchIcon)
+  span.appendChild(searchIcon);
   switchLabel.append(switchBtn, div);
   toggle.append(switchLabel);
   search.append(span, text);
@@ -39,7 +39,7 @@ const head = () => {
     containerDiv,
     switchBtn,
     text,
-  }
+  };
 };
 
 export default head;

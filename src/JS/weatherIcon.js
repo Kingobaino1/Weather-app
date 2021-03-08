@@ -1,7 +1,7 @@
 const weatherIcon = (obj) => {
   const iconDiv = document.createElement('div');
   iconDiv.className = 'w-25 mx-auto';
-  
+
   switch (obj) {
     case 'Thunderstorm':
       const thunder = document.createElement('i');
@@ -39,7 +39,7 @@ const weatherIcon = (obj) => {
       clearSky.setAttribute('alt', 'Clear sky logo');
       iconDiv.appendChild(clearSky);
       break;
-  
+
     default:
       const sunny = document.createElement('i');
       sunny.className = 'fas fa-5x fa-cloud-sun text-white';

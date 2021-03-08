@@ -1,7 +1,6 @@
 import weatherIcon from './weatherIcon';
 
 const report = (obj) => {
-  
   const container = document.createElement('div');
 
   const logo = document.createElement('div');
@@ -13,7 +12,7 @@ const report = (obj) => {
   const deg = document.createElement('h4');
   deg.className = 'text-white mt-3';
   deg.setAttribute('id', 'cel');
-  deg.textContent = `${Math.round((obj.main.temp - 273.15) *100) / 100 }°C`;
+  deg.textContent = `${Math.round((obj.main.temp - 273.15) * 100) / 100}°C`;
 
   const description = document.createElement('h6');
   description.className = 'text-white';
@@ -40,7 +39,7 @@ const report = (obj) => {
   const minValue = document.createElement('div');
   minValue.className = 'text-dark bg-secondary w-25 mx-auto value';
   minValue.setAttribute('id', 'celMin');
-  minValue.textContent = `${Math.round((obj.main.temp_min - 273.15) * 100) / 100 }°C`;
+  minValue.textContent = `${Math.round((obj.main.temp_min - 273.15) * 100) / 100}°C`;
 
   const minText = document.createElement('div');
   minText.className = 'text-white text mt-2 mx-auto';
@@ -52,7 +51,7 @@ const report = (obj) => {
   const maxValue = document.createElement('div');
   maxValue.className = 'text-dark bg-secondary w-25 mx-auto value';
   maxValue.setAttribute('id', 'celMax');
-  maxValue.textContent = `${Math.round((obj.main.temp_max - 273.15) * 100) / 100 }°C`;
+  maxValue.textContent = `${Math.round((obj.main.temp_max - 273.15) * 100) / 100}°C`;
 
   const maxText = document.createElement('div');
   maxText.className = 'text-white mt-2 text mx-auto';
@@ -103,7 +102,7 @@ const report = (obj) => {
     'September',
     'October',
     'November',
-    'December'
+    'December',
   ];
   const monthName = months[d.getMonth()];
   const days = [
@@ -113,7 +112,7 @@ const report = (obj) => {
     'Wed',
     'Thu',
     'Fri',
-    'Sat'
+    'Sat',
   ];
   const dayName = days[d.getDay()];
   const formatted = `${dayName}, ${day} ${monthName} ${year}`;
