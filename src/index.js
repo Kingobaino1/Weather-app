@@ -69,4 +69,4 @@ const enter = (e) => {
 text.addEventListener('keypress', enter);
 switchBtn.addEventListener('click', scroll);
 
-data('kazan');
+data('awka');
