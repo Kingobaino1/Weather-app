@@ -3,9 +3,6 @@
   "version": "1.0.0",
   "description": "This app gives weather report of a city selected.",
   "main": "index.js",
-  "eslintIgnore": [
-    "weatherIcon.js"
-  ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack",
@@ -22,7 +19,11 @@
   },
   "homepage": "https://github.com/Kingobaino1/Weather-app#readme",
   "devDependencies": {
+    "babel-eslint": "^10.1.0",
     "css-loader": "^5.1.1",
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb-base": "^14.1.0",
+    "eslint-plugin-import": "^2.20.2",
     "file-loader": "^6.2.0",
     "style-loader": "^2.0.0",
     "stylelint": "^13.3.3",

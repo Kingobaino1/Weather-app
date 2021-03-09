@@ -2,6 +2,7 @@ import './style.css';
 import head from './JS/header';
 import deg from './JS/tempConversion';
 import report from './JS/displayReport';
+import backgroundImage from './JS/changeBackground';
 
 let tempVal;
 let tempMin;
@@ -13,6 +14,7 @@ const {
   switchBtn,
 } = head();
 
+const body = document.querySelector('#bg_image');
 const content = document.querySelector('.content');
 const section = document.querySelector('.details');
 content.appendChild(containerDiv);
@@ -39,6 +41,8 @@ async function data(city) {
     const responds = await url;
     const result = responds.json();
     const value = await result;
+    const bgImg = value.weather[0].main;
+    backgroundImage(bgImg);
     tempVal = value.main.temp - 273.15;
     tempMin = value.main.temp_min - 273.15;
     tempMax = value.main.temp_max - 273.15;
@@ -54,6 +58,7 @@ async function data(city) {
 const enter = (e) => {
   if (e.which === 13) {
     section.innerHTML = '';
+    body.style.backgroundImage = '';
     const letter = text.value.toLowerCase();
     data(letter);
     text.value = '';
@@ -64,4 +69,4 @@ const enter = (e) => {
 text.addEventListener('keypress', enter);
 switchBtn.addEventListener('click', scroll);
 
-data('awka');
+data('kazan');
